@@ -5,6 +5,12 @@
     <title>Dos and Don'ts of Git by Kenzan</title>
 </head>
 <style>
+    @keyframes blinker {
+        50% {
+            opacity: 0;
+        }
+    }
+    
     body {
         background: #333;
         color: limegreen;
@@ -39,6 +45,16 @@
         font-size: 1.3em;
     }
     
+    #dos-item-list div:hover dt:after {
+        content: "";
+        border: 1px solid;
+        width: 10px;
+        display: inline-block;
+        height: 100%;
+        margin-left: 4px;
+        animation: blinker .75s linear infinite;
+    }
+    
     dl#dos-item-list,
     dl#donts-item-list {
         display: flex;
@@ -46,7 +62,8 @@
         justify-content: space-around;
     }
     
-    #dos-item-list div, #donts-item-list div {
+    #dos-item-list div,
+    #donts-item-list div {
         flex: 1 1 auto;
         border-bottom: 1px dashed;
         padding: 10px 0;
@@ -55,15 +72,14 @@
     html {
         font-size: 16px;
     }
-
+    
     @media print {
-      body {
-        color: black;
-      }
-
-      .section-wrapper {
-        display: block;
-    }
+        body {
+            color: black;
+        }
+        .section-wrapper {
+            display: block;
+        }
     }
 </style>
 
