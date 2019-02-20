@@ -29,19 +29,41 @@
     }
     
     dd {
-        margin: 0;
         text-align: justify;
+        margin: 0 0 10px 0;
+        font-size: 0.9em;
     }
     
     dt {
         font-weight: bold;
-        border-bottom: .5px dashed;
-        margin-bottom: 3px;
-        padding-bottom: 5px;
+        font-size: 1.3em;
+    }
+    
+    dl#dos-item-list,
+    dl#donts-item-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    
+    #dos-item-list div, #donts-item-list div {
+        flex: 1 1 auto;
+        border-bottom: 1px dashed;
+        padding: 10px 0;
     }
     
     html {
         font-size: 16px;
+    }
+
+    @media print {
+      body {
+        color: black;
+      }
+
+      .section-wrapper {
+        display: block;
+    }
     }
 </style>
 
@@ -59,28 +81,64 @@
                     </p>
                 </header>
                 <div>
-                    <dl>
-                        <dt>Commit early and often</dt>
-                        <dd>Committing is your safety net giving you a place in history to revert to <em>when</em> necessary.</dd>
+                    <dl id="dos-item-list">
                     </dl>
                 </div>
             </section>
             <section id="donts" class="bordered">
                 <header class="bordered">
-                    <h2>The Don'ts</h2>
-                    <p>How cause trouble in your workflow</p>
+                    <h2>The Don&apos;ts</h2>
+                    <p>How to cause trouble in your workflow</p>
                 </header>
                 <div>
-                    <dl>
-                        <dt>Commit generated files</dt>
-                        <dd>Generated files can be regenerated at any time, and may be different based on various configurations.</dd>
+                    <dl id="donts-item-list">
                     </dl>
                 </div>
             </section>
         </div>
     </div>
     <script>
-      
+        function addDoItem(item) {
+            const dt = document.createElement("dt")
+            const dl = document.createElement("dd");
+            const wrapper = document.createElement("div");
+            const list = document.getElementById("dos-item-list");
+
+            dt.appendChild(document.createTextNode(item.title));
+            dl.appendChild(document.createTextNode(item.desc));
+
+            wrapper.appendChild(dt);
+            wrapper.appendChild(dl);
+
+            list.appendChild(wrapper);
+        }
+
+        function addDontItem(item) {
+            const dt = document.createElement("dt")
+            const dl = document.createElement("dd");
+            const wrapper = document.createElement("div");
+            const list = document.getElementById("donts-item-list");
+
+            dt.appendChild(document.createTextNode(item.title));
+            dl.appendChild(document.createTextNode(item.desc));
+
+            wrapper.appendChild(dt);
+            wrapper.appendChild(dl);
+
+            list.appendChild(wrapper);
+        }
+
+        fetch("./best-practices.json")
+            .then(response => response.json())
+            .then(res => {
+                const {
+                    dos,
+                    donts
+                } = res
+
+                dos.forEach(addDoItem);
+                donts.forEach(addDontItem);
+            });
     </script>
 </body>
 
