@@ -45,8 +45,7 @@
         font-size: 1.3em;
     }
     
-    .item-list div:hover dt:after
-    {
+    .item-list div:hover dt:after {
         content: "";
         border: 1px solid;
         width: 10px;
@@ -140,36 +139,6 @@
         </div>
     </div>
     <script>
-        function addDoItem(item) {
-            const dt = document.createElement("dt")
-            const dl = document.createElement("dd");
-            const wrapper = document.createElement("div");
-            const list = document.getElementById("dos-item-list");
-
-            dt.appendChild(document.createTextNode(item.title));
-            dl.appendChild(document.createTextNode(item.desc));
-
-            wrapper.appendChild(dt);
-            wrapper.appendChild(dl);
-
-            list.appendChild(wrapper);
-        }
-
-        function addDontItem(item) {
-            const dt = document.createElement("dt")
-            const dl = document.createElement("dd");
-            const wrapper = document.createElement("div");
-            const list = document.getElementById("donts-item-list");
-
-            dt.appendChild(document.createTextNode(item.title));
-            dl.appendChild(document.createTextNode(item.desc));
-
-            wrapper.appendChild(dt);
-            wrapper.appendChild(dl);
-
-            list.appendChild(wrapper);
-        }
-
         fetch("./best-practices.json")
             .then(response => response.json())
             .then(res => {
@@ -178,8 +147,23 @@
                     donts
                 } = res
 
-                dos.forEach(addDoItem);
-                donts.forEach(addDontItem);
+                const addItem = (item, listName) => {
+                    const dt = document.createElement("dt")
+                    const dl = document.createElement("dd");
+                    const wrapper = document.createElement("div");
+                    const list = document.getElementById(listName);
+
+                    dt.appendChild(document.createTextNode(item.title));
+                    dl.appendChild(document.createTextNode(item.desc));
+
+                    wrapper.appendChild(dt);
+                    wrapper.appendChild(dl);
+
+                    list.appendChild(wrapper);
+                }
+
+                dos.forEach(item => addItem(item, "dos-item-list"));
+                donts.forEach(item => addItem(item, "donts-item-list"));
             });
     </script>
 </body>
