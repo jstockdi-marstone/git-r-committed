@@ -45,7 +45,8 @@
         font-size: 1.3em;
     }
     
-    #dos-item-list div:hover dt:after {
+    .item-list div:hover dt:after
+    {
         content: "";
         border: 1px solid;
         width: 10px;
@@ -55,18 +56,25 @@
         animation: blinker .75s linear infinite;
     }
     
-    dl#dos-item-list,
-    dl#donts-item-list {
+    .item-list {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
     }
     
-    #dos-item-list div,
-    #donts-item-list div {
+    .item-list div {
         flex: 1 1 auto;
         border-bottom: 1px dashed;
         padding: 10px 0;
+    }
+    
+    section header div {
+        margin: 0 auto;
+        width: 50%
+    }
+    
+    #donts pre {
+        transform: rotate(180deg);
     }
     
     html {
@@ -93,11 +101,19 @@
                 <header class="bordered">
                     <h2>The Dos</h2>
                     <p>How successful developers git down</p>
-                    <p>
-                    </p>
+                    <div>
+                        <pre>    /@
+    \ \
+  ___> \
+ (__O)  \
+(____@)  \
+(____@)   \
+ (__o)_    \
+       \    \</pre>
+                    </div>
                 </header>
                 <div>
-                    <dl id="dos-item-list">
+                    <dl id="dos-item-list" class="item-list">
                     </dl>
                 </div>
             </section>
@@ -105,9 +121,19 @@
                 <header class="bordered">
                     <h2>The Don&apos;ts</h2>
                     <p>How to cause trouble in your workflow</p>
+                    <div>
+                        <pre>    /@
+    \ \
+  ___> \
+ (__O)  \
+(____@)  \
+(____@)   \
+ (__o)_    \
+       \    \</pre>
+                    </div>
                 </header>
                 <div>
-                    <dl id="donts-item-list">
+                    <dl id="donts-item-list" class="item-list">
                     </dl>
                 </div>
             </section>
