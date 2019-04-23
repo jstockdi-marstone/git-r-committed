@@ -3,94 +3,11 @@
 
 <head>
     <title>Dos and Don'ts of Git by Kenzan</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="./styles.css" />
 </head>
-<style>
-    @keyframes blinker {
-        50% {
-            opacity: 0;
-        }
-    }
-    
-    body {
-        background: #333;
-        color: limegreen;
-        font-family: monospace;
-    }
-    
-    .bordered {
-        border: 2px dashed;
-        padding: 13px;
-    }
-    
-    h1 {
-        text-align: center;
-    }
-    
-    h1 small {
-        display: block;
-    }
-    
-    .section-wrapper {
-        display: flex;
-    }
-    
-    dd {
-        text-align: justify;
-        margin: 0 0 10px 0;
-        font-size: 0.9em;
-    }
-    
-    dt {
-        font-weight: bold;
-        font-size: 1.3em;
-    }
-    
-    .item-list div:hover dt:after {
-        content: "";
-        border: 1px solid;
-        width: 10px;
-        display: inline-block;
-        height: 100%;
-        margin-left: 4px;
-        animation: blinker .75s linear infinite;
-    }
-    
-    .item-list {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-    
-    .item-list div {
-        flex: 1 1 auto;
-        border-bottom: 1px dashed;
-        padding: 10px 0;
-    }
-    
-    section header div {
-        margin: 0 auto;
-        width: 50%
-    }
-    
-    #donts pre {
-        transform: rotate(180deg);
-    }
-    
-    html {
-        font-size: 16px;
-    }
-    
-    @media print {
-        body {
-            color: black;
-        }
-        .section-wrapper {
-            display: block;
-        }
-    }
-</style>
 
-<body>
+<body onload="retrieveBestPractices();">
     <div class="bordered">
         <header class="bordered">
             <h1>Dos and Don'ts of Git <small>by Kenzan</small></h1>
@@ -118,34 +35,7 @@
             </section>
         </div>
     </div>
-    <script>
-        fetch("./best-practices.json")
-            .then(response => response.json())
-            .then(res => {
-                const {
-                    dos,
-                    donts
-                } = res
-
-                const addItem = (item, listName) => {
-                    const dt = document.createElement("dt")
-                    const dl = document.createElement("dd");
-                    const wrapper = document.createElement("div");
-                    const list = document.getElementById(listName);
-
-                    dt.appendChild(document.createTextNode(item.title));
-                    dl.appendChild(document.createTextNode(item.desc));
-
-                    wrapper.appendChild(dt);
-                    wrapper.appendChild(dl);
-
-                    list.appendChild(wrapper);
-                }
-
-                dos.forEach(item => addItem(item, "dos-item-list"));
-                donts.forEach(item => addItem(item, "donts-item-list"));
-            });
-    </script>
+    <script src="./scripts.js" type="application/javascript"></script>
 </body>
 
 </html>
