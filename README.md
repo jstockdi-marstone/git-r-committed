@@ -7,7 +7,9 @@ Git is an enormous part of the development workflow. This project is meant to sh
 - [View the Do's and Don'ts](https://kenzanlabs.github.io/git-r-committed)
 - [Git Cheat Sheet (.png)](https://kenzanlabs.github.io/git-r-committed/images/Kenzan_Git_Cheat_Sheet.png) 
 
-## Git Aliases
+## Helpful Hints
+
+### Git Aliases
 
 A Git alias is a pre-configured _shortcut_ for commonly used commands. There are two ways to simplify your Git workflow:
 
@@ -22,7 +24,7 @@ The primary difference between the two are how the alias command is used. Git al
 
 For example, you could create a Git alias for `git checkout` to instead be `git co`. In contrast, a shell alias for `git checkout` could be simply `gc`. 
 
-### Popular Git Aliases
+#### Popular Git Aliases
 
 Below is a list of common aliases curated from Git power users at Kenzan. In this instance, it can be assumed that Git aliases were created, but a shell alias could be created to accommodate any workflow preference.
 
@@ -38,7 +40,7 @@ Below is a list of common aliases curated from Git power users at Kenzan. In thi
 |`$ git rev-list -1 HEAD`|`$ git rl`|Retrieve the commit hash of the last commit|
 |`$ git show --stat`|`$ git ss`|Display the stats of the latest commit|
 
-### Popular Shell Aliases
+#### Popular Shell Aliases
 
 It should be noted that the following commands have been contributed by Kenzan developers as part of their preferred workflow. Each command should be used with care, and modified to match your own workflow.
 
@@ -51,4 +53,5 @@ It should be noted that the following commands have been contributed by Kenzan d
 
 ## Do's and Don't Development
 
-This repo is the home of the [Git Do's and Don'ts created by Kenzan](https://kenzanlabs.github.io/git-r-committed), which is hosted using [GitHub Pages](https://pages.github.com/). The site files are located on the [`gh-pages` branch](https://github.com/kenzanlabs/git-r-committed/tree/gh-pages), along with details on how to contribute.
+This repo is the home of the [Git Do's and Don'ts created by Kenzan](https://kenzanlabs.github.io/git-r-committed), which is hosted using [GitHub Pages](https://pages.github.com/). The site files are located on the [`gh-pages` branch](https://github.com/kenzanlabs/git-r-committed/tree/gh-pages), and if interested in helping extend the Do's and Don't please refer to the [CONTRIBUTING.md](./CONTRIBUTING.md
+).
