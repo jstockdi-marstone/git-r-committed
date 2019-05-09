@@ -3,12 +3,16 @@
 ## Overview
 Git is an enormous part of the development workflow. This project is meant to share best practices and common workflow tips that should assist developers in becoming Git power users.
 
+## Git Resources
+- [View the Do's and Don'ts](https://kenzanlabs.github.io/git-r-committed)
+- [Git Cheat Sheet (.png)](https://kenzanlabs.github.io/git-r-committed/images/Kenzan_Git_Cheat_Sheet.png) 
+
 ## Git Aliases
 
 A Git alias is a pre-configured _shortcut_ for commonly used commands. There are two ways to simplify your Git workflow:
 
 1. [Git Aliases](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases)
-    
+
     Leverage `git config` to create a custom alias to replace common commands;
 1. [Shell Aliases](http://www.tldp.org/LDP/abs/html/aliases.html)
 
@@ -45,5 +49,6 @@ It should be noted that the following commands have been contributed by Kenzan d
 |$ git branch &#124; grep '^\*' &#124; cut -d' ' -f2 &#124; pbcopy|`$ gcopy`|Copy the current branch name to the clipboard|
 |`$ git shortlog -sn`|`$ gcount`|List all commit authors with the number of commits for each|
 
+## Do's and Don't Development
 
-
+This repo is the home of the [Git Do's and Don'ts created by Kenzan](https://kenzanlabs.github.io/git-r-committed), which is hosted using [GitHub Pages](https://pages.github.com/). The site files are located on the [`gh-pages` branch](https://github.com/kenzanlabs/git-r-committed/tree/gh-pages), along with details on how to contribute.
