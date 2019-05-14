@@ -51,6 +51,13 @@ It should be noted that the following commands have been contributed by Kenzan d
 |$ git branch &#124; grep '^\*' &#124; cut -d' ' -f2 &#124; pbcopy|`$ gcopy`|Copy the current branch name to the clipboard|
 |`$ git shortlog -sn`|`$ gcount`|List all commit authors with the number of commits for each|
 
+### Git GUI Clients
+
+The majority of Kenzan Git power users utilize the command line for their Git process; however, there are a few that prefer the visual assistance that a GUI client provides. Here are a few that we enjoy.
+
+- [SmartGit](https://www.syntevo.com/smartgit/)
+- [SourceTree](https://www.sourcetreeapp.com/)
+
 ## Do's and Don't Development
 
 This repo is the home of the [Git Do's and Don'ts created by Kenzan](https://kenzanlabs.github.io/git-r-committed), which is hosted using [GitHub Pages](https://pages.github.com/). The site files are located on the [`gh-pages` branch](https://github.com/kenzanlabs/git-r-committed/tree/gh-pages), and if interested in helping extend the Do's and Don't please refer to the [CONTRIBUTING.md](./CONTRIBUTING.md
